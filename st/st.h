@@ -2,5 +2,6 @@
 #define ST_H
 
 extern void installst();
+extern void infost();
 
 #endif

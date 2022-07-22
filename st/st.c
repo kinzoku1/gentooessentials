@@ -17,3 +17,12 @@ extern void installst()
     printf("Installation finished!");
     return;
 }
+
+extern void infost(){
+    printf("ST is a simple terminal implementation for X made by suckless.\n");
+    printf("Configuration file available in 'st' folder in home directory after installation (config.h)\n");
+    printf("Scrollback patch automatically applied on installation, other patches available at https://st.suckless.org/patches/\n");
+    printf("Run with sudo when installing using gentooessentials\n");
+    printf("Read more at https://st.suckless.org/\n");
+    return;
+}

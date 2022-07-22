@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
   } else if (strcmp(argv[1], "--info") == 0){
       mode = "info";
   }else{
-    printf("ERROR: Incorrect Arguments\n");
+    printf("%s\n", errorargv);
     return 0;
   }
 
@@ -33,6 +33,15 @@ int main(int argc, char *argv[]){
      default:
        printf("%s\n", errorargv);
    }
+  }
+  if (strcmp("info", mode) == 0){
+    switch(pkg){
+      case ST:
+       infost();
+       break;
+      default:
+        printf("%s\n", errorargv);
+    }
   }
   return 0;
 }
