@@ -6,20 +6,20 @@
 
 int main(int argc, char *argv[]){
   int pkg = 0;
-  if (strcmp("--install", argv[1])){
+  if (strcmp(argv[1], "--install") == 0){
     mode = "install";
-  } else if (strcmp("--info", argv[1])){
+  } else if (strcmp(argv[1], "--info") == 0){
       mode = "info";
   }else{
     printf("ERROR: Incorrect Arguments\n");
     return 0;
   }
 
-  if (strcmp("st", argv[2])){
+  if (strcmp(argv[2], "st") == 0){
     pkg = ST;
-  }else if(strcmp("dwm", argv[2])){
+  }else if(strcmp(argv[2], "dwm") == 0){
     pkg = DWM;
-  }else if(strcmp("slstatus", argv[2])){
+  }else if(strcmp(argv[2], "slstatus") == 0){
     pkg = SLSTATUS;
   }else{
     printf("%s\n", errorargv);
