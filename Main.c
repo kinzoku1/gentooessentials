@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
     printf("%s\n", errorargv);
   }
 
-  if(strcmp("install", mode)){
+  if(strcmp("install", mode) == 0){
    switch(pkg){
      case ST:
        installst();
