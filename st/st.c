@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "st.h"
 
-void installst()
+extern void installst()
 {
     printf("[CLONING REPOSITORY...]\n");
     system("cd ~ && git clone https://git.suckless.org/st");
