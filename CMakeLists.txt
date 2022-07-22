@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(gentooessentials)
 
+add_subdirectory(st)
+
 # add the executable
 add_executable(gentooessentials Main.c)
-
-add_subdirectory(st)
 
 target_link_libraries(gentooessentials PUBLIC ${PROJECT_SOURCE_DIR}/Main.h)
 target_link_libraries(gentooessentials PUBLIC st)
