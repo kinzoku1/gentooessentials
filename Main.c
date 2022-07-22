@@ -1,25 +1,37 @@
 #include <stdio.h>
 #include <string.h>
-#include "pkgs/st.h"
+#include "st/st.h"
 #include "Main.h"
 
 int main(int argc, char **argv){
-  for(int i = 0; i < argc; i++){
-    if (strcmp("--install", argv[1])){
-      mode = "install";
-    } else if (strcmp("--info", argv[1])){
-      mode = "info";
-    }else{
-      printf("ERROR: Incorrect Arguments\n");
-      return 0;
-    }
-
-
+  int pkg = 0;
+  if (strcmp("--install", argv[1])){
+    mode = "install";
+  } else if (strcmp("--info", argv[1])){
+    mode = "info";
+  }else{
+    printf("ERROR: Incorrect Arguments\n");
+    return 0;
   }
 
-  if (mode == "install" && strcmp("st", argv[2])){
-    installst();
+  if (strcmp("st", argv[2])){
+    pkg = ST;
+  }else if(strcmp("dwm", argv[2])){
+    pkg = DWM;
+  }else if(strcmp("slstatus", argv[2])){
+    pkg = SLSTATUS;
+  }else{
+    printf("%s\n", errorargv);
   }
 
+  if (mode == "install"){
+   switch(pkg){
+     case ST:
+       installst();
+       break;
+     default:
+       printf("%s\n", errorargv);
+   }
+  }
   return 0;
 }
