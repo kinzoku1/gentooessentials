@@ -8,6 +8,8 @@ Clone the repository
 
 Install
 
-```cd st
+```
+cd st
 make
-sudo make clean install```
+sudo make clean install
+```
