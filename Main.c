@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "st/st.h"
+#include "pkgs/st.h"
+#include "pkgs/dwm.h"
 #include "Main.h"
 
 int main(int argc, char *argv[]){
@@ -30,6 +31,9 @@ int main(int argc, char *argv[]){
      case ST:
        installst();
        break;
+     case DWM:
+       installdwm();
+       break;
      default:
        printf("%s\n", errorargv);
    }
@@ -38,6 +42,9 @@ int main(int argc, char *argv[]){
     switch(pkg){
       case ST:
        infost();
+       break;
+      case DWM:
+       infodwm();
        break;
       default:
         printf("%s\n", errorargv);

@@ -1,21 +1,25 @@
 CC = gcc
 CFLAGS = -o
 OUTOBJ = gentooessentials
-STOBJS = st/st.c st/st.h
+STOBJS = pkgs/st.c pkgs/st.h
+DWMOBJS = pkgs/dwm.c pkgs/dwm.h
 
 TARGET_EXEC = Main
 
 BUILD_DIR = ./build
 
-$(OUTOBJ): Main.o st.o
+$(OUTOBJ): Main.o st.o dwm.o
 	@echo Building...
-	@$(CC) Main.o st.o $(CFLAGS) $(OUTOBJ) -g
+	@$(CC) Main.o st.o dwm.o $(CFLAGS) $(OUTOBJ) -g
 
 Main.o: Main.c Main.h
 	@$(CC) -c Main.c
 
 st.o: $(STOBJS)
-	@$(CC) -c st/st.c
+	@$(CC) -c pkgs/st.c
+
+dwm.o: $(DWMOBJS)
+	@$(CC) -c pkgs/dwm.c
 
 install:
 	@echo Installing...
@@ -23,4 +27,4 @@ install:
 	@sudo cp -r gntessential ~
 
 clean:
-	@rm -rf st.o Main.o
+	@rm -rf st.o Main.o dwm.o
